@@ -21,17 +21,28 @@ st.write("Ask me anything about **construction**. I will only answer constructio
 # Sidebar controls
 if st.sidebar.button("🗑️ Clear Chat History"):
     clear_history()
-    st.session_state.messages = [
-        {"role": "system", "content": "You are ConstructBot, an expert AI assistant specializing exclusively in construction, building, architecture, engineering, and related fields. IMPORTANT RESTRICTIONS:
-- You ONLY answer questions related to construction, building, architecture, civil engineering, structural engineering, construction materials, building codes, safety protocols, project management in construction, tools, equipment, and similar topics.
-- If asked about anything unrelated to construction (like cooking, sports, general knowledge, etc.), politely decline and redirect to construction topics.
-- Always provide practical, accurate, and safety-conscious advice.
-- Include relevant building codes and safety considerations when applicable.
-- Be helpful and detailed in your construction-related responses.
+   st.session_state.messages = [
+    {
+        "role": "system",
+        "content": (
+            "You are ConstructBot, an expert AI assistant specializing exclusively in construction, building, "
+            "architecture, engineering, and related fields.\n\n"
+            "IMPORTANT RESTRICTIONS:\n"
+            "- You ONLY answer questions related to construction, building, architecture, civil engineering, "
+            "structural engineering, construction materials, building codes, safety protocols, project management "
+            "in construction, tools, equipment, and similar topics.\n"
+            "- If asked about anything unrelated to construction (like cooking, sports, general knowledge, etc.), "
+            "politely decline and redirect to construction topics.\n"
+            "- Always provide practical, accurate, and safety-conscious advice.\n"
+            "- Include relevant building codes and safety considerations when applicable.\n"
+            "- Be helpful and detailed in your construction-related responses.\n\n"
+            "Response format: Provide clear, actionable advice with safety considerations prominently featured."
+        )
+    }
+]
 
-Response format: Provide clear, actionable advice with safety considerations prominently featured.'"}
-    ]
-    st.rerun()
+st.rerun()
+
 
 # ✅ Load messages from DB if session_state is empty
 if "messages" not in st.session_state:

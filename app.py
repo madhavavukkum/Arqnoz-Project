@@ -15,7 +15,7 @@ init_db()
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 st.set_page_config(page_title="Arqonz Construction Chatbot", layout="centered")
-st.title("🏗️ Arqonz Construction Chatbot (Gemini AI)")
+st.title("🏗️ Arqonz Construction Chatbot ")
 st.write("Ask me anything about **construction**. I will only answer construction-related queries.")
 
 # Sidebar controls

@@ -21,7 +21,7 @@ st.write("Ask me anything about **construction**. I will only answer constructio
 # Sidebar controls
 if st.sidebar.button("🗑️ Clear Chat History"):
     clear_history()
-   st.session_state.messages = [
+    st.session_state.messages = [
     {
         "role": "system",
         "content": (
